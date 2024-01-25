@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class Status extends Model
+class Role extends Model
 {
     use HasFactory;
 
@@ -16,8 +15,4 @@ class Status extends Model
 
     public $timestamps = false;
 
-    public function applications()
-    {
-        return $this->hasMany(Application::class, 'status_id');
-    }
 }

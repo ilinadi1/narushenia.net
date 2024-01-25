@@ -16,10 +16,12 @@ class Application extends Model
     ];
 
     public function get_status(){
-        return $this->hasOne(Status::class);
+        return $this->belongsTo(Status::class,'status_id');
     }
 
     public function get_user(){
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class,'user_id');
+        // обратная связь
     }
+    
 }

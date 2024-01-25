@@ -18,9 +18,13 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        'login',
         'password',
+        'name',
+        'surname',
+        'patronymic',
+        'phone',
+        'email',
         'role',
     ];
 
@@ -45,6 +49,6 @@ class User extends Authenticatable
     ];
 
     public function get_applications(){
-        return $this->hasMany(Application::class);
+        return $this->hasMany(Application::class,'user_id');
     }
 }

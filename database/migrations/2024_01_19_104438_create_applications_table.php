@@ -3,8 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\User;
-use App\Models\Status;
 
 return new class extends Migration
 {
@@ -17,10 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('car_number',9);
             $table->text('description');
-            $table->foreignIdFor(Status::class);
-            $table->foreign('status_id')->on('statuses')->references('id');
-            $table->foreignIdFor(User::class);
-            $table->foreign('user_id')->on('users')->references('id');
+            $table->foreignId('status_id')->references('id')->on('statuses');
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
 
         });
