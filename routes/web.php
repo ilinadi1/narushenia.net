@@ -20,4 +20,9 @@ Route::post('/create',[ApplicationController::class,'create']);
 
 Route::get('/logout',[UserController::class,'logout']);
 
-Route::get('/admin',[AdminController::class,'index'])->name('admin');
+Route::get('/admin',[AdminController::class,'admin']);
+
+Route::get('/confirm/{id}',[AdminController::class,'confirm']);
+Route::get('/decline/{id}',[AdminController::class,'decline']);
+
+Route::get('/applications/sort', [ApplicationController::class,'appSort']);

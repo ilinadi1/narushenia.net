@@ -14,15 +14,31 @@
             <form action="/signin" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="login">Введите логин</label>
-                    <input type="text" name="login" placeholder="Логин">
+                    <label for="loginOne" class="form-label">Введите логин</label>
+                    <input type="text" name="loginOne" placeholder="Логин" class="form-control">
+                    @error('loginOne')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="password">Введите пароль</label>
-                    <input type="password" name="password" placeholder="Пароль">
+                    <label for="passwordOne" class="form-label"> Введите пароль </label>
+                    <input type="password" name="passwordOne" placeholder="Пароль"  class="form-control">
+                    @error('passwordOne')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <button type="submit">Войти</button>
+                    <button type="submit" class="btn btn-primary">Войти</button>
                 </div>
             </form>
         </div>
@@ -30,35 +46,91 @@
             <form action="/signup" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="login">Введите логин</label>
-                    <input type="text" name="login" placeholder="Логин">
+                    <label for="login" class="form-label">Введите логин</label>
+                    <input type="text" name="login" placeholder="Логин" class="form-control">
+                    @error('login')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="password">Введите пароль</label>
-                    <input type="password" name="password" placeholder="Пароль">
+                    <label for="password" class="form-label">Введите пароль</label>
+                    <input type="password" name="password" placeholder="Пароль" class="form-control">
+                    @error('password')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="name">Введите имя</label>
-                    <input type="text" name="name" placeholder="Имя">
+                    <label for="name" class="form-label">Введите имя</label>
+                    <input type="text" name="name" placeholder="Имя" class="form-control">
+                    @error('name')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="surname">Введите фамилию</label>
-                    <input type="text" name="surname" placeholder="Фамилия">
+                    <label for="surname" class="form-label">Введите фамилию</label>
+                    <input type="text" name="surname" placeholder="Фамилия" class="form-control">
+                    @error('surname')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="patronymic">Введите отчество</label>
-                    <input type="text" name="patronymic" placeholder="Отчество">
+                    <label for="patronymic" class="form-label">Введите отчество</label>
+                    <input type="text" name="patronymic" placeholder="Отчество" class="form-control">
+                    @error('patronymic')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="phone">Введите номер телефона</label>
-                    <input type="tel" name="phone" placeholder="Номер телефона">
+                    <label for="phone" class="form-label">Введите номер телефона</label>
+                    <input type="tel" name="phone" placeholder="Номер телефона" class="form-control">
+                    @error('phone')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="email">Введите электронную почту</label>
-                    <input type="email" name="email" placeholder="Электронная почта">
+                    <label for="email" class="form-label">Введите электронную почту</label>
+                    <input type="email" name="email" placeholder="Электронная почта" class="form-control">
+                    @error('email')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <button type="submit">Зарегистрироваться</button>
+                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
                 </div>
             </form>
         </div>

@@ -2,3 +2,12 @@
     justify-content: space-around;
     display: flex;
 }
+.tableInfo{
+    border: 1px solid black;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.tableInfo td,th{
+    border: 1px solid black;
+}

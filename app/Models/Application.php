@@ -23,5 +23,9 @@ class Application extends Model
         return $this->belongsTo(User::class,'user_id');
         // обратная связь
     }
-    
+    public function status()
+    {
+        return $this->belongsTo(Status::class, 'status_id');
+    }
+
 }

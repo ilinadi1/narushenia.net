@@ -12,12 +12,28 @@
     <form action="/create" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-          <label for="car_number">Введите регистрационный номер машины</label>
+          <label for="car_number" class="form-label">Введите регистрационный номер машины</label>
           <input type="text" class="form-control" id="car_number" placeholder="Регистрационный номер машины" name="car_number">
+          @error('car_number')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @enderror
         </div>
         <div class="form-group">
-          <label for="description">Введите описание</label>
+          <label for="description" class="form-label">Введите описание</label>
           <input type="text" class="form-control" id="description" placeholder="Описание" name="description">
+          @error('description')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @enderror
         </div>
         <button type="submit" class="btn btn-primary">Отправить</button>
       </form>
